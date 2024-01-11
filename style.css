@@ -1,0 +1,353 @@
+:root{
+    --main-color:white;
+    --sec-1-color:rgb(64, 132, 124);
+    --sec-2-color:rgb(174, 108, 51);
+    --sec-3-color:rgb(90, 142, 84);
+    
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+
+
+body{
+    color: white;
+}
+/*------------------------------------Logo--------------------------------*/
+.logo{
+    position: fixed;
+    cursor: pointer;
+    z-index: 1;
+}
+.c-logo{
+    background-color: var(--sec-1-color);
+    width: 40px;
+    height: 40px;
+     margin: 5px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.j-logo{
+    background-color: var(--main-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.centro-logo{
+    background-color: var(--sec-1-color);
+    width: 17px;
+    height: 17px;
+    border-radius: 2px;
+    
+}
+
+.form-logo{
+    background-color: var(--sec-1-color);
+    width: 15px;
+    height: 10px;
+    margin-left: -10px;
+}
+
+
+
+/*---------------------------Navigation---------------------------------*/
+
+/*Link Zustände*/
+/* Normaler Zustand */
+a:link {
+    color: var(--sec-1-color);
+    text-decoration: none;
+}
+
+/* Besuchter Zustand */
+a:visited {
+    color: var(--sec-1-color);
+    text-decoration: none;
+}
+
+/* Hover-Zustand */
+a:hover {
+    color: var(--sec-1-color);
+    text-decoration: none; /* Keine Unterstreichung im Hover-Zustand */
+}
+
+/* Aktiver Zustand */
+a:active {
+    color: var(--sec-1-color);
+    text-decoration: none;
+}
+
+/* Fokus-Zustand */
+a:focus {
+    outline: var(--sec-1-color); /* Beispiel für eine Fokusumrandung */
+    text-decoration: none;
+}
+
+/*Link Zustände*/
+
+.header-hg{
+    background: var(--main-color);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    
+}
+
+.navbar{
+    
+    position: fixed;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    right: 10%;
+  
+   z-index: 3;
+
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+}
+
+.nav-branding{
+    font-size: 2rem;
+}
+
+.nav-link{
+    transition: 0.7s ease;
+}
+
+.nav-link:hover{
+    color: rgb(23, 88, 88);
+}
+
+
+
+a {
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--sec-1-color);
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        left: 80%;
+    }
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    
+
+    
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 50px;
+        gap: 0;
+        flex-direction: column;
+        border-color: var(--main-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        background-color: var(--main-color);
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+
+}
+    
+
+
+
+
+
+
+/*---------------------------Main---------------------------------*/
+
+.sec-1 img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    margin-top: -8rem;
+    margin-bottom: 5rem;
+    
+    
+}
+
+.schrift-sec-1{
+    margin-top: -5rem;
+}
+
+
+.sec-2 img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    margin-top: -12rem;
+    margin-bottom: 5rem;
+}
+
+.schrift-sec-2{
+    margin-top: -5rem;
+}
+
+.sec-3 img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    margin-top: -12rem;
+    margin-bottom: 5rem;
+}
+
+.schrift-sec-3{
+    margin-top: -5rem;
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    overflow-x: hidden;
+    
+}
+
+section .animate{
+    transition: 0.7s;
+    
+}
+
+h1{
+    font-size: 4rem;
+}
+p{
+    margin: 2rem;
+}
+
+.sec-1 .animate{
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.sec-1.show-animate .animate{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-2 .animate{
+    transform: translateX(100%);
+    opacity: 0;
+    
+}
+
+.sec-2.show-animate .animate{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-3 .animate{
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.sec-3.show-animate .animate{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-1{
+    background: var(--sec-1-color);
+}
+
+.sec-2{
+    background:  var(--sec-2-color);
+}
+.sec-3{
+    background:  var(--sec-3-color);
+}
+
+section .button{
+    width: 60px;
+    height: 30px;
+}
+
+section .button:hover{
+  
+        background-color: var(--sec-1-color);
+        color: white;
+    
+}
+
+.fotosec1{
+  
+  
+    position: absolute;
+    
+    
+    top: 4.3rem;
+    z-index: 5;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+
+   
+  
+   
+}
+
